@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://hls3.04lv.com/live/L17926830.m3u8?txSecret=b36be24d62dcbb197217ca6eeb22f6b2&txTime=64ABF338&_s=stream
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1688982364~acl=/hls-p/ingest_206_*/*~hmac=b093ae6df3e57c23fb8281b47d9c3c967324f7ed8e0f6e654d0f34a491ac4e65/hls-p/ingest_206_720p/index.m3u8
