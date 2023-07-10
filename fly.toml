@@ -1,0 +1,14 @@
+# fly.toml app configuration file generated for tipistream on 2023-07-10T11:25:09+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "tipistream"
+primary_region = "sin"
+
+[http_service]
+  http_checks = []
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []

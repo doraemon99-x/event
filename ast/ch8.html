@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shaka Player Blue Theme</title>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.10/controls.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.6/shaka-player.ui.externs.min.js" integrity="sha512-QFvv7o/fr201Dyw7VHNBDCn4UCQRuPLLWSLeAk6BGfgK3DTSv0SCFf/4eo9JYVIlAEMFfZDwbtHNUPi1XgpUPg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.6/shaka-player.compiled.js"></script>
+    
+    <style>
+        body {
+        width:100%;
+        height: 100%;
+        font-family: Poppins;
+        display:block;
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        background: #000;
+        overflow: hidden;
+    }
+    video {
+        width:100%;
+        height: 100%;
+        display:inline-block;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+    </style>
+  </head>
+  <body>
+            <video data-shaka-player id="player" crossOrigin="anonymous" preload="none" controls allowFullScreen webkitallowfullscreen mozallowfullscreen></video>
+  <script>
+    var videoElement = document.getElementById('player');
+    var player = new shaka.Player(videoElement);
+    // Mengatur opsi DRM
+    player.configure({
+      drm: {
+        servers: {
+          'com.widevine.alpha': 'https://cors.tipiku.site/https://mrpw.ptmnc01.verspective.net/?deviceId=MmY5NDUwYTUtMTBjZC0zNGM1LWE5MTMtNjY4NjU2NzE4MGM2'
+        }
+      }
+    });
+
+    // Mengatur sumber video
+    player.load('https://nyanv-live-cdn.mncnow.id/live/eds/Nickelodeon/sa_dash_vmx/Nickelodeon.mpd').then(function() {
+      // Video siap diputar
+      console.log('Video siap diputar');
+    }).catch(function(error) {
+      // Menangani kesalahan pemutaran
+      console.error('Kesalahan pemutaran:', error);
+    });
+  </script>
+  </body>
+</html>

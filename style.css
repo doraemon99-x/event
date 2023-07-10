@@ -1,0 +1,134 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e0d0d;
+    height: 60px;
+  }
+  
+  #myButton {
+    background-color: #867d8c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+#myButton:hover {
+    background-color: #f3820f;
+}
+
+#iframe_a {
+  margin-top: 8px;
+  width: 100%;
+  height: 400px;
+}
+
+  .logo {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .logo img {
+    width: 166px;
+    height: 57px;
+  }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  nav ul li a:hover {
+    background-color: #ddd;
+  }
+  .Marquee-box {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 67px;
+    -webkit-perspective: 500px;
+            perspective: 500px;
+    top: auto;
+    left: auto;
+    z-index: 100;
+ }
+ .MyMarquee {
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    border: 3px solid #8C8C8C;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #512B70;
+
+    transform: rotateX(10deg);
+    transform-origin: 50% 50% 0px;
+ }
+ .MyMarquee div {
+    display: inline-block;
+    vertical-align: middle;
+ }
+ .MyMarquee a, .MyMarquee img {
+    display: inline-block;
+    text-decoration: underline;
+    color: #FFFFFF;
+    vertical-align: middle;
+ }
+ a  {
+   text-decoration: none;
+   color: black;
+    }
+    
+   .container{
+       display: flex;
+       flex-wrap: wrap;
+   }
+   .body {
+   background: rgba(61, 48, 69, 1);
+   }
+   .item{
+       margin: 5px;
+       padding-left: 5px;
+       padding-right: 5px;
+       word-spacing: 8px;
+       flex: 1 1 45px;
+       text-align: center;
+       background: rgba(67, 255, 100, 0.85);
+       border-radius: 16px;
+       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       backdrop-filter: blur(5px);
+       -webkit-backdrop-filter: blur(5px);
+       border: 1px solid rgba(255, 255, 255, 0.3);
+   }
+.group{
+   padding-top: 7px;
+   padding-bottom: 7px;
+   color: #14edcf;
+   outline-style: groove;
+   }
+ 
+ 

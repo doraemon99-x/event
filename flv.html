@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FLV Player</title>
+</head>
+<style>
+    body {
+        width:100%;
+        height: 100%;
+        font-family: Poppins;
+        display:block;
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        background: #000;
+        overflow: hidden;
+    }
+    video{
+        width:100%;
+        height: 100%;
+        display:inline-block;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+</style>
+
+<body>
+  <video id="videoElement" controls></video>
+  <script src="https://cdn.jsdelivr.net/npm/flv.js/dist/flv.min.js"></script>
+  <script>
+    if (flvjs.isSupported()) {
+      var videoElement = document.getElementById('videoElement');
+      var flvPlayer = flvjs.createPlayer({
+        type: 'flv',
+        url: 'https://pull06.scstream.net/live/stream-170430_lhd.flv?auth_key=1677246434-0-0-df2995992068206fb71a89266f5e34e7'
+      });
+      flvPlayer.attachMediaElement(videoElement);
+      flvPlayer.load();
+    } else {
+      console.error('FLV player is not supported');
+    }
+  </script>
+</body>
+</html>

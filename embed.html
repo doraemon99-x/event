@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Integrasi Shakaplayer dengan DRM dan Fungsi Resolusi</title>
+    <link rel='stylesheet' href='https://tipiku.site/pkg-plyr/dist/plyr.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.0/shaka-player.compiled.js"></script>
+    <script src="https://tipiku.site/pkg-plyr/dist/plyr.js"></script>
+    <script src="https://tipiku.site/player.js"></script>
+  </head>
+  <style>
+    body {
+        width:100%;
+        height: 100%;
+        font-family: Poppins;
+        display:block;
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        background: #000;
+        overflow: hidden;
+    }
+    video{
+        width:100%;
+        height: 100%;
+        display:inline-block;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+</style>
+  <body>
+    <video id="player" controls allowFullScreen webkitallowfullscreen mozallowfullscreen></video>
+    <script>
+      const videoElement = document.getElementById('player');
+      const resolutionSelect = document.getElementById('resolution-select');
+      const manifestUri = 'https://anevi-live-channel-cdn.mncnow.id/live/eds/CartoonNetwork/sa_dash_vmx/CartoonNetwork.mpd';
+      const licenseServerUrl = 'https://drmwidevine.nontonbola.my.id/https://mrpw.ptmnc01.verspective.net/?deviceId=MzFhNzdiNGQtZWU5NC0zYTBiLWIzODktNDU5OWRlMzI0NDVh';
+
+      shaka.polyfill.installAll();
+      if (shaka.Player.isBrowserSupported()) {
+        initApp();
+      } else {
+        console.error('Browser tidak didukung!');
+      }
+
+      function initApp() {
+        const player = new shaka.Player(videoElement);
+        player.configure({
+          drm: {
+            servers: { 'com.widevine.alpha': licenseServerUrl }
+          }
+        });
+        player.addEventListener('variantchanged', onVariantChanged);
+        player.load(manifestUri).then(() => {
+          console.log('Berhasil memuat konten!');
+        }).catch(onError);
+      }
+
+      function onVariantChanged() {
+        const variants = player.getVariantTracks();
+        resolutionSelect.innerHTML = '';
+        variants.forEach(variant => {
+          const option = document.createElement('option');
+          option.value = variant.id;
+          option.text = variant.height + 'p';
+          if (variant.active === true) {
+            option.selected = true;
+          }
+          resolutionSelect.appendChild(option);
+        });
+      }
+
+      resolutionSelect.addEventListener('change', onResolutionChanged);
+
+      function onResolutionChanged() {
+        const variantId = resolutionSelect.value;
+        const variant = player.getVariantTracks().find(track => track.id === variantId);
+        player.selectVariantTrack(variant);
+      }
+
+      function onError(error) {
+        console.error('Error code', error.code, 'dengan pesan', error.message);
+      }
+    </script>
+  </body>
+</html>
