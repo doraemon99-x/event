@@ -1,12 +1,10 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689336668~acl=/hls-b/ingest_206_*/*~hmac=a26cce0793979c790b7b851fb95a4a6e321b8434505ae1c05431fafb5ed1d4e7/hls-b/ingest_206_1080p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689336668~acl=/hls-b/ingest_206_*/*~hmac=a26cce0793979c790b7b851fb95a4a6e321b8434505ae1c05431fafb5ed1d4e7/hls-b/ingest_206_720p/index.m3u8
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689412806~acl=/hls-b/ingest_206_*/*~hmac=0a0580466c169795f625018342a8f6cb69762be81d0c380e4d7efdb71d006f56/hls-b/ingest_206_720p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689336668~acl=/hls-b/ingest_206_*/*~hmac=a26cce0793979c790b7b851fb95a4a6e321b8434505ae1c05431fafb5ed1d4e7/hls-b/ingest_206_480p/index.m3u8
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689412806~acl=/hls-b/ingest_206_*/*~hmac=0a0580466c169795f625018342a8f6cb69762be81d0c380e4d7efdb71d006f56/hls-b/ingest_206_480p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689336668~acl=/hls-b/ingest_206_*/*~hmac=a26cce0793979c790b7b851fb95a4a6e321b8434505ae1c05431fafb5ed1d4e7/hls-b/ingest_206_360p/index.m3u8
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689412806~acl=/hls-b/ingest_206_*/*~hmac=0a0580466c169795f625018342a8f6cb69762be81d0c380e4d7efdb71d006f56/hls-b/ingest_206_360p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689336668~acl=/hls-b/ingest_206_*/*~hmac=a26cce0793979c790b7b851fb95a4a6e321b8434505ae1c05431fafb5ed1d4e7/hls-b/ingest_206_240p/index.m3u8
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689412806~acl=/hls-b/ingest_206_*/*~hmac=0a0580466c169795f625018342a8f6cb69762be81d0c380e4d7efdb71d006f56/hls-b/ingest_206_240p/index.m3u8
