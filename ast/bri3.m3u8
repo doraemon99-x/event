@@ -1,6 +1,6 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000,RESOLUTION=1920x1080
-https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-991134_lhd.m3u8?sub_m3u8=true&edge_slice=true&auth_key=1689411729-0-0-458d91ae374f62fa475967ea44b695fa&user_session_id=3a78aa72881c3fc154406b89943888c4
+https://ab8b015f73be7afff38f332fb2361575.livehwc3.cn/pull06.scstream.net/live/stream-380460_lhd.m3u8?edge_slice=true&user_session_id=4bd284702a6c11cde603efa45792e584&auth_key=1689425589-0-0-5d3bd348b6028319d0ba13ee0bb528ea&sub_m3u8=true
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1500000,RESOLUTION=1280x720
-https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-991134_lsd.m3u8?user_session_id=04ca1b35d88d9a7ad5c5bcebb3558dfe&edge_slice=true&auth_key=1689411729-0-0-a88c6fd9f70f495e1dfb6f97d50aacc1&sub_m3u8=true
+https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-380460_lsd.m3u8?auth_key=1689425589-0-0-4347a754563b678be4cb2b30e03f50b7&sub_m3u8=true&user_session_id=403b1c537e309b454a51e9f9868159f4&edge_slice=true
