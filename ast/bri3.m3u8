@@ -1,6 +1,6 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://pull06.scstream.net/live/stream-991138_lhd.m3u8?auth_key=1689410666-0-0-e4b2d735fd0d1b0b164b7b9a3348037e
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
-https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-991138_lsd.m3u8?auth_key=1689410666-0-0-a3f144e8627879dcc1bab1fc0ae11fad&edge_slice=true&sub_m3u8=true&user_session_id=10f5cb81f33896333f7063f58735f91d
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000,RESOLUTION=1920x1080
+https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-991134_lhd.m3u8?sub_m3u8=true&edge_slice=true&auth_key=1689411729-0-0-458d91ae374f62fa475967ea44b695fa&user_session_id=3a78aa72881c3fc154406b89943888c4
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1500000,RESOLUTION=1280x720
+https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-991134_lsd.m3u8?user_session_id=04ca1b35d88d9a7ad5c5bcebb3558dfe&edge_slice=true&auth_key=1689411729-0-0-a88c6fd9f70f495e1dfb6f97d50aacc1&sub_m3u8=true
