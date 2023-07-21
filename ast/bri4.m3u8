@@ -1,4 +1,10 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://pullsport.bduwrql.cn/live/sd-1-3945733.flv?txSecret=c9b4a0aea02ca17de4b20060073e8767&txTime=64BAA862
+https://etslive-2-vidio-com.akamaized.net/exp=1689945529~acl=/hls-p/ingest_13797_*/*~hmac=5cd6e7d44dae192c92d3b6e04a0a1d82090ebe038076dbf0404254a17c32c082/hls-p/ingest_13797_720p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
+https://etslive-2-vidio-com.akamaized.net/exp=1689945529~acl=/hls-p/ingest_13797_*/*~hmac=5cd6e7d44dae192c92d3b6e04a0a1d82090ebe038076dbf0404254a17c32c082/hls-p/ingest_13797_480p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
+https://etslive-2-vidio-com.akamaized.net/exp=1689945529~acl=/hls-p/ingest_13797_*/*~hmac=5cd6e7d44dae192c92d3b6e04a0a1d82090ebe038076dbf0404254a17c32c082/hls-p/ingest_13797_360p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
+https://etslive-2-vidio-com.akamaized.net/exp=1689945529~acl=/hls-p/ingest_13797_*/*~hmac=5cd6e7d44dae192c92d3b6e04a0a1d82090ebe038076dbf0404254a17c32c082/hls-p/ingest_13797_240p/index.m3u8
