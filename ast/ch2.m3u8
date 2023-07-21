@@ -1,4 +1,12 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1920x1080
-https://hls3.04lv.com/live/L15716580.m3u8?txSecret=3793b855296b43772fc60b0604687444&txTime=644E1BCE&_s=stream
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_1080p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_720p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_480p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_360p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
+https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_240p/index.m3u8

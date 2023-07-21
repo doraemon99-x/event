@@ -1,6 +1,12 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000,RESOLUTION=1920x1080
-https://ab8b015f73be7afff38f332fb2361575.livehwc3.cn/pull06.scstream.net/live/stream-380460_lhd.m3u8?edge_slice=true&user_session_id=4bd284702a6c11cde603efa45792e584&auth_key=1689425589-0-0-5d3bd348b6028319d0ba13ee0bb528ea&sub_m3u8=true
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1500000,RESOLUTION=1280x720
-https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-380460_lsd.m3u8?auth_key=1689425589-0-0-4347a754563b678be4cb2b30e03f50b7&sub_m3u8=true&user_session_id=403b1c537e309b454a51e9f9868159f4&edge_slice=true
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
+https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_1080p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
+https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_720p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
+https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_480p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
+https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_360p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
+https://etslive-2-vidio-com.akamaized.net/exp=1689940022~acl=/hls-p/ingest_13798_*/*~hmac=d27fd2d1a72628a675617c32e8bd1df6f53324bb3878b69ac8b35d3eabc6ee0a/hls-p/ingest_13798_240p/index.m3u8
