@@ -1,12 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689953626~acl=/hls-p/ingest_13561_*/*~hmac=590c07224f3040e578ef0399aae8f3fe240e2a5d76e2fee4032c4a2e3b4abc45/hls-p/ingest_13561_1080p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689953626~acl=/hls-p/ingest_13561_*/*~hmac=590c07224f3040e578ef0399aae8f3fe240e2a5d76e2fee4032c4a2e3b4abc45/hls-p/ingest_13561_720p/index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689953626~acl=/hls-p/ingest_13561_*/*~hmac=590c07224f3040e578ef0399aae8f3fe240e2a5d76e2fee4032c4a2e3b4abc45/hls-p/ingest_13561_480p/index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689953626~acl=/hls-p/ingest_13561_*/*~hmac=590c07224f3040e578ef0399aae8f3fe240e2a5d76e2fee4032c4a2e3b4abc45/hls-p/ingest_13561_360p/index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
-https://tipicors.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1689953626~acl=/hls-p/ingest_13561_*/*~hmac=590c07224f3040e578ef0399aae8f3fe240e2a5d76e2fee4032c4a2e3b4abc45/hls-p/ingest_13561_240p/index.m3u8
+https://pullsport.bduwrql.cn/live/sd-1-3945735.m3u8?txSecret=133c9179bf68645803a1a0c596d526b5&txTime=64BAC7BA
