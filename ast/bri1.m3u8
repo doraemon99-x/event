@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000
-https://a0504dae9c72cdb02b00ddedf6df4973.livehwc3.cn/pull06.scstream.net/live/stream-479379_lhd.m3u8?sub_m3u8=true&user_session_id=c88421a20aeb7e5c7c36831e7433d5fe&auth_key=1690621648-0-0-3e784a43fb1aefb6260cf539e2406e7a&edge_slice=true
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
+https://hs3.04lv.com/live/L18528810.m3u8?txSecret=7e0b49942c94660c3b31c48822e4badf&txTime=64C61974&_s=stream
