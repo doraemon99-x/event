@@ -38,21 +38,24 @@
             <div style="text-align: center;">
                 <div class="group">
                   <button id="myButton" onclick="goToHome()">Home</button>
-                  <script>
-                    function goToHome() {
-                      window.location.href = "https://bri.tipiku.site/";
-                    }
-                  </script>
                   <button id="myButton" onclick="loadIframe('/ast/event2')">SPOTV</button>
                   <button id="myButton" onclick="loadIframe('/ast/event3')">SPOTV 2</button>
                   <button id="myButton" onclick="loadIframe('/ast/sportstar3')">Liga 1-Main 1</button>
                   <button id="myButton" onclick="loadIframe('/ast/sportstar4')">Liga 1-Main 2</button>
                   <button id="myButton" onclick="loadIframe('/ast/bri1')">Liga 1-CH 1</button>
                   <button id="myButton" onclick="loadIframe('/ast/bri2')">Liga 1-CH 2</button>
-                  <button id="myButton" onclick="loadIframe('/efbi')">AFF-CH 1</button>
+                  <button id="myButton" onclick="openNewPage()">AFF-CH 1</button>
 				          <button id="myButton" onclick="loadIframe('/ast/ch6')">CH 6</button>
                   <button id="myButton" onclick="loadIframe('/ast/ch5')">Man.U TV</button>
                   <button id="myButton" onclick="loadIframe('/ast/ch4')">Real MadridTV</button>
+                  <script>
+                    function goToHome() {
+                      window.location.href = "https://bri.tipiku.site/";
+                    }
+                    function openNewPage() {
+                      window.open("https://www.example.com", "_blank");
+                     }
+                  </script>
             </div>       
         <hr>
         
