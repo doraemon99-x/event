@@ -1,4 +1,12 @@
 #EXTM3U
 #EXT-X-VERSION:3
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
+https://corstipi.fly.devhttps://etslive-2-vidio-com.akamaized.net/exp=1692872563~acl=/hls-b/ingest_14472_*/*~hmac=1262c08c8f5651c6b4d1e76a69437e75efba2a6e0b108a34a146690c78929422/hls-b/ingest_14472_1080p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://hs3.04lv.com/live/H1906219.m3u8?txSecret=c96de9d20755eb324b933d4c756e79bd&txTime=64E241E1&_s=stream
+https://corstipi.fly.devhttps://etslive-2-vidio-com.akamaized.net/exp=1692872563~acl=/hls-b/ingest_14472_*/*~hmac=1262c08c8f5651c6b4d1e76a69437e75efba2a6e0b108a34a146690c78929422/hls-b/ingest_14472_720p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
+https://corstipi.fly.devhttps://etslive-2-vidio-com.akamaized.net/exp=1692872563~acl=/hls-b/ingest_14472_*/*~hmac=1262c08c8f5651c6b4d1e76a69437e75efba2a6e0b108a34a146690c78929422/hls-b/ingest_14472_480p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
+https://corstipi.fly.devhttps://etslive-2-vidio-com.akamaized.net/exp=1692872563~acl=/hls-b/ingest_14472_*/*~hmac=1262c08c8f5651c6b4d1e76a69437e75efba2a6e0b108a34a146690c78929422/hls-b/ingest_14472_360p/index.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
+https://corstipi.fly.devhttps://etslive-2-vidio-com.akamaized.net/exp=1692872563~acl=/hls-b/ingest_14472_*/*~hmac=1262c08c8f5651c6b4d1e76a69437e75efba2a6e0b108a34a146690c78929422/hls-b/ingest_14472_240p/index.m3u8
