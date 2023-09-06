@@ -1,12 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
-https://etslive-2-vidio-com.akamaized.net/exp=1693410150~acl=/hls-b/ingest_14573_*/*~hmac=fd341bcad6090bb09a50555f52687f24c5257b60623f4bdb37b01599b2d0d1e3/hls-b/ingest_14573_1080p/index.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://etslive-2-vidio-com.akamaized.net/exp=1693410150~acl=/hls-b/ingest_14573_*/*~hmac=fd341bcad6090bb09a50555f52687f24c5257b60623f4bdb37b01599b2d0d1e3/hls-b/ingest_14573_720p/index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1200000,NAME=480p,RESOLUTION=854x480
-https://etslive-2-vidio-com.akamaized.net/exp=1693410150~acl=/hls-b/ingest_14573_*/*~hmac=fd341bcad6090bb09a50555f52687f24c5257b60623f4bdb37b01599b2d0d1e3/hls-b/ingest_14573_480p/index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=625000,NAME=360p,RESOLUTION=640x360
-https://etslive-2-vidio-com.akamaized.net/exp=1693410150~acl=/hls-b/ingest_14573_*/*~hmac=fd341bcad6090bb09a50555f52687f24c5257b60623f4bdb37b01599b2d0d1e3/hls-b/ingest_14573_360p/index.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=375000,NAME=240p,RESOLUTION=426x240
-https://etslive-2-vidio-com.akamaized.net/exp=1693410150~acl=/hls-b/ingest_14573_*/*~hmac=fd341bcad6090bb09a50555f52687f24c5257b60623f4bdb37b01599b2d0d1e3/hls-b/ingest_14573_240p/index.m3u8
+https://tipicors.fly.dev/https://obevcimanyd179314182.thapcam.link/live/may8/chunklist.m3u8
