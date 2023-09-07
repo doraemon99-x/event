@@ -1,6 +1,5 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
-https://tipicors.fly.dev/https://obevcimanyd179314182.thapcam.link/live/may1FHD/chunklist.m3u8
+https://tipicors.fly.dev/https://1123139281.cdn.khmer-hd.com/may1HD/chunks.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://hs3.04lv.com/live/H19685610.m3u8?txSecret=97ef71b547c3e55cfae2c8e20922963f&txTime=64FB6B70&_s=stream
