@@ -1,6 +1,6 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
-https://tipicors.fly.dev/https://179720687.global.cdnfastest.com/live/sd-3glrw7h7wx9nqdy/chunklist_w913689498.m3u8
+#https://tipicors.fly.dev/https://179720687.global.cdnfastest.com/live/sd-3glrw7h7wx9nqdy/chunklist_w913689498.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=1500000,NAME=720p,RESOLUTION=1280x720
-https://hs3.04lv.com/live/H1962896.m3u8?txSecret=2849962f8c59bc1847298cee3388d021&txTime=64FBB670&_s=stream
+https://hs3.04lv.com/live/L1964179.m3u8?txSecret=b22269fa00fb94fa8cea18edfc72793d&txTime=64FC6200&_s=stream
