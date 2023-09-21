@@ -1,0 +1,36 @@
+@-webkit-keyframes FallDown {
+	0% {
+		top: -100%;
+	}
+	85% {
+		top: +3%;
+	}
+	90% {
+		top: 0%;
+	}
+	95% {
+		top: -1%;
+	}				
+	100% {
+		top: 0%;
+	}		
+}
+
+@keyframes FallDown {
+	0% {
+		top: -100%;
+	}
+	85% {
+		top: +3%;
+	}
+	90% {
+		top: 0%;
+	}
+	95% {
+		top: -1%;
+	}				
+	100% {
+		top: 0%;
+	}		
+}
+
