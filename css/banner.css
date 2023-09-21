@@ -29,7 +29,7 @@ a img {
 	--- Element s textem ---
 */
 .text {
-  font-family: 'cursive';
+  font-family: auto;
   text-align: center;
   position: absolute;
   width: 100%;
@@ -100,7 +100,7 @@ a img {
   position: absolute;
   bottom: -20px;
   left: -20px;
-  height: 120px;
+  height: 150px;
   /* Protoze chceme rozmery modifikovat podle rozmeru banneru, definujeme je v CSS */
   width: auto;
   -webkit-transition: -webkit-transform .2s;
