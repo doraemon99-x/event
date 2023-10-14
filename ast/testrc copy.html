@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JW Player ClearKey DRM Example</title>
+    
+    <!-- Include JW Player library -->
+    <script src="//ssl.p.jwpcdn.com/player/v/8.21.0/jwplayer.js"></script>
+    <script>
+      jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+  </script>
+</head>
+<body>
+    <!-- Create a video element with an ID for JW Player -->
+    <div id="player"></div>
+
+    <script>
+        // Initialize JW Player
+        var playerInstance = jwplayer("player");
+
+        // Configure JW Player with your specific settings
+        playerInstance.setup({
+            file: "https://mangga-live-cdn.mncnow.id/live/eds/Sportstar4/sa_dash_vmx/Sportstar4.mpd", // URL to your video
+            image: "URL_TO_VIDEO_POSTER_IMAGE", // URL to a poster image
+            autostart: false, // Autoplay option
+            width: 640, // Width of the player
+            height: 360, // Height of the player
+            drm: {
+                clearKey: {
+                    // Your ClearKey decryption keys
+                    "b81b1942c65f35547ced1bff074206a5": "a07dc4d86f51db7195f4b7e2abe9d9e8"
+                }
+            }
+        });
+    </script>
+</body>
+</html>
