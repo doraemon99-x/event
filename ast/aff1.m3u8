@@ -1,7 +1,4 @@
 #EXTM3U
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=929819,RESOLUTION=960x540
-http://edge.linknetott.swiftserve.com/channelgroup2/cg235production/ch3300/02.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=470037,RESOLUTION=320x240
-http://edge.linknetott.swiftserve.com/channelgroup2/cg235production/ch3300/01.m3u8
-#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2238993,RESOLUTION=960x540
-http://edge.linknetott.swiftserve.com/channelgroup2/cg235production/ch3300/03.m3u8
+#EXT-X-VERSION:3
+#EXT-X-STREAM-INF:PROGRAM-ID=1,CLOSED-CAPTIONS=NONE,BANDWIDTH=2500000,NAME=1080p,RESOLUTION=1920x1080
+https://live-ak2.vimeocdn.com/85b090d4-d4cd-4fe4-937f-a864d5f4c289/hdntl=exp=1697437241~acl=%2f*~data=hdntl~hmac=d3339327687814fa46804ef65536939d2760ba97ef23ea76a64e508368ce5037/chunklist_b3256000.m3u8
