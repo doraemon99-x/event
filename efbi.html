@@ -70,13 +70,6 @@ display: none
 
 </head>
 <body>
-<div class='main section' id='main'><div class='widget Blog' data-version='2' id='Blog1'>
-<div class='blog-posts hfeed container'>
-<article class='post-outer-container'>
-<div class='post-outer'>
-<div class='post'>
-<div class='post-body entry-content float-container' id='post-body-4838703847492489824'>
-<div class="post-body entry-content" id="post-body-53995925882725861">
 <script src="//ssl.p.jwpcdn.com/player/v/8.21.0/jwplayer.js"></script>
 <script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 </script>
@@ -88,7 +81,7 @@ display: none
     playerInstance.setup({
 
         playlist: [{
-            "title": "RimbaTV",
+            "title": "TV",
             "sources": [
                 {
                     "default": false,
@@ -109,59 +102,17 @@ display: none
         autostart: true,
 			 logo: {
  					 file: '',
- 					 link: 'sportsnews.id/',
+ 					 link: '',
   						position: 'top-right'
   					},
 			cast:{},
 			sharing: {}
     });
 </script>
-</div>
-</div>
-<div class='post-footer'>
-</div>
-</div>
-</div>
-<section class='comments' data-num-comments='0' id='comments'>
-<a name='comments'></a>
-</section>
-</article>
-</div>
-</div></div>
+
 <script>
     var delay_popup = 2000;setTimeout("document.getElementById('overlay').style.display='block'", delay_popup)
 </script>
-<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>
-<script>
-            const copyBtn = document.getElementById('copyBtn')
-            const copyText = document.getElementById('copyText')
-            
-            copyBtn.onclick = () => {
-                copyText.select();    // Selects the text inside the input
-                document.execCommand('copy');    // Simply copies the selected text to clipboard 
-                 Swal.fire({         //displays a pop up with sweetalert
-                    icon: 'success',
-                    title: 'Text copied to clipboard',
-                    showConfirmButton: false,
-                    timer: 1000
-                });
-            }
-        </script>
-<script>
-//<![CDATA[
-  function go(loc) {
-    document.getElementById('iframe').src = loc;
-  };
-  var btnContainer = document.getElementById("serverid");
-  var btns = btnContainer.getElementsByClassName("btn");
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-    });
-  }
-//]]>
-</script>
+
 </body>
 </html>
