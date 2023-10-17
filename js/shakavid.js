@@ -21,11 +21,12 @@ $(document).ready(function(){
                     drm: {
                         drm: {
                             servers: {
-                              'com.widevine.alpha': 'https://tipicors.fly.dev/https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IldpZGV2aW5lIiwic2l0ZV9pZCI6Ik1RRFQiLCJ1c2VyX2lkIjoiMTI4MzI5NDUwIiwiY2lkIjoiZmI0YzY4NTQxY2IxIiwicG9saWN5IjoiNWt4a1MyRytIbEhSb2Fnb1AwYU53ZjFiWXQxMEplWUoyaEJWejc4bGQyZ0JQckFFZTlnQ09vTm5tdUlJYkZ6MHRoSnhZa2hyaFNZeWhIanFLcWxvb3ZnbHVHd2lPTjNxMjdpQXVLU0F6cW96UnFaenppdTM5ZS95MEFYd3lLZnUiLCJ0aW1lc3RhbXAiOiIyMDIzLTEwLTE3VDE5OjAyOjExWiIsImhhc2giOiI4bGhUcFJIb3FQZFluYlg3UWNCczJHRnhmbjRFc0R2S1lRWGhPSFNHNjQ4PSIsImtleV9yb3RhdGlvbiI6ZmFsc2V9'
+                                'com.widevine.alpha': 'https://tipicors.fly.dev/https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IldpZGV2aW5lIiwic2l0ZV9pZCI6Ik1RRFQiLCJ1c2VyX2lkIjoiMTI4MzI5NDUwIiwiY2lkIjoiZmI0YzY4NTQxY2IxIiwicG9saWN5IjoiNWt4a1MyRytIbEhSb2Fnb1AwYU53ZjFiWXQxMEplWUoyaEJWejc4bGQyZ0JQckFFZTlnQ09vTm5tdUlJYkZ6MHRoSnhZa2hyaFNZeWhIanFLcWxvb3ZnbHVHd2lPTjNxMjdpQXVLU0F6cW96UnFaenppdTM5ZS95MEFYd3lLZnUiLCJ0aW1lc3RhbXAiOiIyMDIzLTEwLTE3VDE5OjAyOjExWiIsImhhc2giOiI4bGhUcFJIb3FQZFluYlg3UWNCczJHRnhmbjRFc0R2S1lRWGhPSFNHNjQ4PSIsImtleV9yb3RhdGlvbiI6ZmFsc2V9'
                             }
-                          }
-                        });
-    
+                        }
+                    }    
+                    });
+                
                 player.load(window.atob(data.widevine))
                     .then(function () {
     
