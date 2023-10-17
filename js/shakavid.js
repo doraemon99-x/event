@@ -19,12 +19,13 @@ $(document).ready(function(){
     
                 player.configure({
                     drm: {
-                      clearKeys: {
-                        // 'key-id-in-hex': 'key-in-hex',
-                        'db773b71b7dff1ee74d5ad7cd347756db6f6ef4f756baf74': '2f00300033002f0050006c006100790052006500'
-                      }
-                    }
-                  });
+                        drm: {
+                            servers: {
+                              'com.widevine.alpha': 'https://tipicors.fly.dev/https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IldpZGV2aW5lIiwic2l0ZV9pZCI6Ik1RRFQiLCJ1c2VyX2lkIjoiMTI4MzI5NDUwIiwiY2lkIjoiZmI0YzY4NTQxY2IxIiwicG9saWN5IjoiNWt4a1MyRytIbEhSb2Fnb1AwYU53ZjFiWXQxMEplWUoyaEJWejc4bGQyZ0JQckFFZTlnQ09vTm5tdUlJYkZ6MHRoSnhZa2hyaFNZeWhIanFLcWxvb3ZnbHVHd2lPTjNxMjdpQXVLU0F6cW96UnFaenppdTM5ZS95MEFYd3lLZnUiLCJ0aW1lc3RhbXAiOiIyMDIzLTEwLTE3VDE5OjAyOjExWiIsImhhc2giOiI4bGhUcFJIb3FQZFluYlg3UWNCczJHRnhmbjRFc0R2S1lRWGhPSFNHNjQ4PSIsImtleV9yb3RhdGlvbiI6ZmFsc2V9',
+                              'com.microsoft.playready': 'https://tipicors.fly.dev/https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IlBsYXlSZWFkeSIsInNpdGVfaWQiOiJNUURUIiwidXNlcl9pZCI6IjEyODMyOTQ1MCIsImNpZCI6ImZiNGM2ODU0MWNiMSIsInBvbGljeSI6IjVreGtTMkcrSGxIUm9hZ29QMGFOd2YxYll0MTBKZVlKMmhCVno3OGxkMmdCUHJBRWU5Z0NPb05ubXVJSWJGejB0aEp4WWtocmhTWXloSGpxS3Fsb292Z2x1R3dpT04zcTI3aUF1S1NBenFvelJxWnp6aXUzOWUveTBBWHd5S2Z1IiwidGltZXN0YW1wIjoiMjAyMy0xMC0xN1QxOTowMjoxMVoiLCJoYXNoIjoiWFI2RUFtQkhTeitXczBKRFFJVmxTdnphWGk1UE5IUkljYlg0OGhCNmhuTT0iLCJrZXlfcm90YXRpb24iOmZhbHNlfQ=='
+                            }
+                          }
+                        });
     
                 player.load(window.atob(data.widevine))
                     .then(function () {
