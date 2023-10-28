@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pemutar Video MPD dengan URL Lisensi Widevine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css">
+</head>
+<body>
+    <div id="dplayer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/shaka-player/4.3.6/shaka-player.compiled.js"></script>
+
+    <script>
+        const videoElement = document.createElement('video');
+        videoElement.id = 'video-player';
+        document.body.appendChild(videoElement);
+
+        // Initialize Shaka Player
+        const manifestUri = 'https://mangga-live-cdn.mncnow.id/live/eds/RCTI-DD/sa_dash_vmx/RCTI-DD.mpd';
+        const player = new shaka.Player(videoElement);
+
+        // Set the license server URL
+        player.configure({
+            drm: {
+                servers: {
+                    'com.widevine.alpha': 'https://tipicors.fly.dev/https://mrpw.ptmnc01.verspective.net/?deviceId=MmY5NDUwYTUtMTBjZC0zNGM1LWE5MTMtNjY4NjU2NzE4MGM2'
+                }
+            }
+        });
+
+        player.load(manifestUri).then(() => {
+            // Video loaded successfully
+            console.log('Video loaded successfully.');
+        }).catch((error) => {
+            // Handle error
+            console.error('Error loading video:', error);
+        });
+
+        // Add DPlayer
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            video: {
+                customType: {
+                    'video/mp4': 'video/mp4',
+                    'video/webm': 'video/webm',
+                },
+                quality: [
+                    {
+                        name: 'Auto',
+                        url: 'https://mangga-live-cdn.mncnow.id/live/eds/RCTI-DD/sa_dash_vmx/RCTI-DD.mpd',
+                        type: 'custom',
+                    },
+                ],
+                defaultQuality: 0,
+            },
+        });
+    </script>
+</body>
+</html>
