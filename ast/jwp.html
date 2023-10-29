@@ -5,15 +5,13 @@
 </head>
 <body>
     <div id="player"></div>
-    <script src="https://player.4shares.live/v1/js/jwplayer/jwplayer.js"></script>
-    <script> jwplayer.key = '7MeMRClEneUmFoHRO3u3ypzAZXlVgNtBE2pKDw==';
-    </script>
+    <script src="https://content.jwplatform.com/libraries/your-jwplayer-library.js"></script>
     <script>
         // Fungsi untuk mengambil file m3u8 dengan header referer
         function getM3U8WithReferer() {
-            fetch("https://vb90xltcvg.nsnd.live/live/_definst_/stream_1_1bda7@Z2SD/chunklist.m3u8", {
+            fetch("http://example.com/path-to-your-file.m3u8", {
                 headers: {
-                    "Referer": "https://player.4shares.live/"
+                    "Referer": "http://your-referer-url.com"
                 }
             })
             .then(response => response.text())
