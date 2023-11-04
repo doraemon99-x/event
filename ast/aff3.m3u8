@@ -1,3 +1,3 @@
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/Wp6cWjpq/live-streaming-image.png" group-title="#2. LIVE EVENT",LIVE EVENT CH 5
-#EXTVLCOPT:http-referrer=https://veo.veobtyplayline3c.com/
-https://sport.sportlive.vip/sport/202_2327945_440728.m3u8?auth_key=1698949261-0-0-748208114e21a1281454560b8f114caf
+#EXTM3U
+#EXT-X-STREAM-INF:CLOSED-CAPTIONS=NONE,RESOLUTION=1280x720,FRAME-RATE=50.000,CODECS="avc1.640020,mp4a.40.2",AVERAGE-BANDWIDTH=1560000,BANDWIDTH=1950000
+https://cdn.hlsjs.ru/fls/cdn/xvk3/tracks-v1a1/mono.m3u8
