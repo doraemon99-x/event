@@ -69,29 +69,28 @@ display: none
             "sources": [
                 {
                     "default": false,
-                    "type": "dash",
-                    "file": 'https://d2h3grlsj8f9qu.cloudfront.net/out/v1/df357e7da00b4f528989176850153919/index.mpd?aws.manifestfilter=audio_language:eng;video_codec:h264;video_height:0-540',
-                    "drm": {
-                        "widevine": {
-                    "url": "https://tipicors.fly.dev/https://www.plus.fifa.com/flux-capacitor/api/v1/licensing/widevine/modular?sessionId=Zmx1eF9jYXBhY2l0b3I6NWQzOGU4NDItMjU4OS00ODFjLWI3YTMtZjIxOGNiMzA1YmU5"
-            },
-                    },
-                    "label": "0"
+                    "type": "hls",
+                    "file": "https://mlbb.tipikuy.workers.dev/stream/x0LPiLnagKI/master.m3u8",
+                    "label": "0",
+                    "preload": "metadata"},
+                ]
                 }
-            ]
-        }],
+                ],
+        primary: "html5",
+        hlshtml: true,
+
         width: "100%",
         height: "100%",
         aspectratio: "16:9",
         autostart: true,
-			 logo: {
- 					 file: 'https://i.postimg.cc/7hBXqptn/tipion.png',
- 					 link: '',
-  						position: 'top-right'
-  					},
+        logo: {
+                file: 'https://i.postimg.cc/7hBXqptn/tipion.png',
+                link: '',
+                position: 'top-right'
+            },
 			cast:{},
 			sharing: {}
-    });
+        });
 </script>
 
 <script>
