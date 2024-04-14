@@ -1,8 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
-#EXT-X-STREAM-INF:BANDWIDTH=2530543,RESOLUTION=1280x720,CODECS="avc1.4d4020,mp4a.40.2"
-https://pull.niues.live/live/stream-400798_lhd.m3u8?auth_key=1713037870-0-0-5bd8c6812ae18ee9af7351ca28fa312a
-#https://headlinessportsfoot.com/chunklist/hlsch2.m3u8
-#https://storage.googleapis.com/incershdbdwqd/mux_video_ts/index-1.m3u8
-#https://working.latsyoving.xyz/live/n-2/chunks.m3u8
-
+#EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
+https://stm02bc63681648.cloud.anycastapnic.com/live/8298ecc26b4e4f4aaaac44bf57fb16bc_720/chunklist.m3u8
