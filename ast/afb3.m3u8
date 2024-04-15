@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
-https://stm02bc63681648.slave.anycastapnic.com/live/ea52cf9c3be44bfa9fcc1913e4e201af_480/chunklist.m3u8
+https://liveakgrns.alkassdigital.net/hls/live/2097037/Alkass6xtyuwqa/hdntl=exp=1713275295~acl=%2f*~data=hdntl~hmac=3ead617da421b21f4b2470e9e5d3c8c72344a3a1b8f88a726f883a17dbce3582/master540.m3u8
