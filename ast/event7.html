@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <title>LIVE EVENT STREAMING</title>
+    <!-- Defult metatags -->
+    <!-- Defult metatags -->
+    <meta content='TipiStream' property='og:title'/>
+    <meta content='Free Live Sports Match Day, Social Media Free Live Sports Today, Streamarts Indonesia Free Live Sports Football Everyday, Link Streaming Football All Match Worldwide League, Live Streaming Gratis Seluruh Liga Hari ini, Ongoing Match Free Live Sports , Siaran Langsung Gratis Seluruh  Pertandingan Bola Hari Ini' property='og:description'/>
+    <!-- Required -->
+    <meta content='Free Live Sports Match Day, Social Media Free Live Sports Today, Streamarts Indonesia Free Live Sports Football Everyday, Link Streaming Football All Match Worldwide League, Live Streaming Gratis Seluruh Liga Hari ini, Ongoing Match Free Live Sports , Siaran Langsung Gratis Seluruh  Pertandingan Bola Hari Ini' name='keywords'/>
+    <meta content='Gratis Live Streaming BRI Liga 1 Indonesia, Italy Serie A Free Live Match Day, England Premier League Free Live Match Day, Bundesliga Free Live Match Day, French Ligue 1 Free Live Match Day, Spanish La Liga Free Live Match Day, Free Streaming All Channel TV Worldwide, Free Streaming All Channe Radio Worldwide, Free Live Soccer Highlights Full Match Today, Free Live Sports Match Day, Ongoing Match Free Live Streaming, Free Live Sports Social Media' property='article:tag'/>
+    <meta content='Free Watch Online TV' name='description'/>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    </head>
+<body>
+    <script src="https://ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
+    <script> jwplayer.key = 'Mh/98M9sROX0uXhFlJwXZYeCxbJD5E1+e2goFcRZ07cI/FTu';
+</script>
+<style type="text/css">
+    html, body {
+        width:100%;
+        height: 100%;
+        font-family: Poppins;
+        display:block;
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        background: #000;
+        overflow: hidden;
+    }
+    .player {
+        width:100%;
+        height: 100%;
+        display:inline-block;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+    }
+</style>
+<div id="player"></div>
+<script>
+
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+            "title": "TipiStream",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://cempedak-live-cdn.mncnow.id/live/eds/Sportstar4/sa_dash_vmx/Sportstar4.mpd',
+                    "drm": {
+                        "clearkey": {
+                            "keyId": "b81b1942c65f35547ced1bff074206a5",
+                            "key": "a07dc4d86f51db7195f4b7e2abe9d9e8"
+                        }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
+        width: "100%",
+        height: "100%",
+        autostart: true,
+        
+        autostart: true,
+        "mute": false,
+        "volume": 25,
+        logo: {
+                file: 'https://i.postimg.cc/XqfdKwqF/tipistreamnew.png',
+                link: '',
+                hide: 'false',
+                margin: '35',
+                over: '15',
+                out: '79.5',
+                position: 'bottom-left'
+            },
+            skin: {
+            url: 'https://cdn.jsdelivr.net/gh/kiprox/cf-gdplay@master/skins/netplex.css',
+            name: 'Netflix',
+            },
+        captions: {
+						color: "#f3f368",
+						fontSize: 16,
+						backgroundOpacity: 0,
+						fontfamily: "Helvetica",
+						edgeStyle: "raised"
+			},
+            pipIcon:{},
+			cast:{}
+        });
+</script>
+
+
+</body>
+</html>
