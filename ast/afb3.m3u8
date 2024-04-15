@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
-https://tipicorss.fly.dev/https://liveakgrns.alkassdigital.net/hls/live/2097037/Alkass6xtyuwqa/hdntl=exp=1713276138~acl=%2f*~data=hdntl~hmac=c518ac123e7910d814e2c708ce3f6a5700b14b7424443766bc42587fc0878035/master340.m3u8
+https://tipicorss.fly.dev/https://stm02bc63681648.slave.anycastapnic.com/live/3a470d8ceb284d55ba260240a5dac8f2_480/chunklist.m3u8
