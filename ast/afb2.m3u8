@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
-https://stm02bc63681648.cloud.anycastapnic.com/live/53f5f95d7dea45368cc5dd9c60b270f5_480/chunklist.m3u8
+https://tipicorss.fly.dev/https://etslive-2-vidio-com.akamaized.net/exp=1713177255~acl=/hls-p/ingest_206_*/*~hmac=7f15ac06cb43a24003eb2583202f6755c2cf45f4d7ecf37bbe49f15155d039d7/hls-p/ingest_206_720p/index.m3u8
