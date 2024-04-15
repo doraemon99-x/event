@@ -1,6 +1,6 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
-https://stm02bc63681648.slave.anycastapnic.com/live/ea52cf9c3be44bfa9fcc1913e4e201af_720/chunklist.m3u8
+https://ec02-pop1-hlc.tv360.vn/bpk-token/4bkfql4355ls6j2evmlocvcyf7qfiwbp/bpk-tv/194/output/194-audio_133600_eng=131600-video=1752000.m3u8
 #https://pull.niur.live/live/stream-462413_lhd.m3u8?txSecret=78f2b48d8a881c4ffd9c9d7e1658532e&txTime=661d2462
 
