@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
-https://tipicorss.fly.dev/https://stm02bc63681648.slave.anycastapnic.com/live/3a470d8ceb284d55ba260240a5dac8f2_480/chunklist.m3u8
+https://stm02bc63681648.slave.anycastapnic.com/live/fcec2b1bcb7647f2afcf0753c8666bf9_480/chunklist.m3u8
