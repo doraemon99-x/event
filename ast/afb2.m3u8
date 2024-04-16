@@ -1,4 +1,4 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=806255,AVERAGE-BANDWIDTH=732959,CODECS="avc1.64001e,mp4a.40.2",RESOLUTION=854x480,FRAME-RATE=25.000
-https://stm02bc63681648.cloud.anycastapnic.com/live/32b1e50409bd445f8134bd88240e76a0_720/chunklist.m3u8
+https://stm02bc63681648.slave.anycastapnic.com/live/dd9515c096e745978a7a6e5bb7effec0_720/playlist.m3u8
