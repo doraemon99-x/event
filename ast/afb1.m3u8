@@ -1,10 +1,10 @@
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=1392000,AVERAGE-BANDWIDTH=1265000,CODECS="mp4a.40.2,avc1.4D001E",RESOLUTION=640x360,FRAME-RATE=25
-https://ec05-pop1-hlc.tv360.vn/bpk-token/bqixagbx7brbqmugnasa2elqdagbc4ay/bpk-tv/194/output/194-audio_133600_eng=131600-video=1067600.m3u8
+https://ec01-pop1-hlc.tv360.vn/bpk-token/r6c36vfnjg4vjbctuvui3bn7kshylp2u/bpk-tv/194/output/194-audio_133600_eng=131600-video=1067600.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=2190000,AVERAGE-BANDWIDTH=1991000,CODECS="mp4a.40.2,avc1.4D0028",RESOLUTION=1920x1080,FRAME-RATE=25
-https://ec05-pop1-hlc.tv360.vn/bpk-token/bqixagbx7brbqmugnasa2elqdagbc4ay/bpk-tv/194/output/194-audio_133600_eng=131600-video=1752000.m3u8
+https://ec01-pop1-hlc.tv360.vn/bpk-token/r6c36vfnjg4vjbctuvui3bn7kshylp2u/bpk-tv/194/output/194-audio_133600_eng=131600-video=1752000.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=6207000,AVERAGE-BANDWIDTH=5642000,CODECS="mp4a.40.2,avc1.64002A",RESOLUTION=1920x1080,FRAME-RATE=50
-https://ec05-pop1-hlc.tv360.vn/bpk-token/bqixagbx7brbqmugnasa2elqdagbc4ay/bpk-tv/194/output/194-audio_133600_eng=131600-video=5197200.m3u8
+https://ec01-pop1-hlc.tv360.vn/bpk-token/r6c36vfnjg4vjbctuvui3bn7kshylp2u/bpk-tv/194/output/194-audio_133600_eng=131600-video=5197200.m3u8
 #EXT-X-STREAM-INF:BANDWIDTH=7994000,AVERAGE-BANDWIDTH=7267000,CODECS="mp4a.40.2,avc1.64002A",RESOLUTION=1920x1080,FRAME-RATE=50
-https://ec05-pop1-hlc.tv360.vn/bpk-token/bqixagbx7brbqmugnasa2elqdagbc4ay/bpk-tv/194/output/194-audio_133600_eng=131600-video=6730000.m3u8
+https://ec01-pop1-hlc.tv360.vn/bpk-token/r6c36vfnjg4vjbctuvui3bn7kshylp2u/bpk-tv/194/output/194-audio_133600_eng=131600-video=6730000.m3u8
