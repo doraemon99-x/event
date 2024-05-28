@@ -20,12 +20,12 @@ $(document).ready(function(){
                 player.configure({
                     drm: {
                         clearKeys: {
+                            '611fb0321bc2c5cfee20ae25f8220c50': '31591c3d943342de25b66c763e1d77c1',
                             '5d625464bb50c9b26dae60fe1654b0ba': 'cd34da9be2a068a1cf7ae781869837a5',
                           }
                     }
                 });
-                
-                
+    
                 player.load(window.atob(data.widevine))
                     .then(function () {
     
