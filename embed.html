@@ -1,87 +1,644 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Contoh Integrasi Shakaplayer dengan DRM dan Fungsi Resolusi</title>
-    <link rel='stylesheet' href='https://tipiku.site/pkg-plyr/dist/plyr.css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.0/shaka-player.compiled.js"></script>
-    <script src="https://tipiku.site/pkg-plyr/dist/plyr.js"></script>
-    <script src="https://tipiku.site/player.js"></script>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>YouTube Custom Embed Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- TODO: Load locally -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
   <style>
-    body {
-        width:100%;
-        height: 100%;
-        font-family: Poppins;
-        display:block;
-        position: absolute;
-        padding: 0px;
-        margin: 0px;
-        background: #000;
-        overflow: hidden;
+    h4 {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 0;
     }
-    video{
-        width:100%;
-        height: 100%;
-        display:inline-block;
-        -webkit-user-select:none;
-        -moz-user-select:none;
-        -ms-user-select:none;
-        user-select:none;
+    hr {
+      margin: 15px 0;
     }
-</style>
-  <body>
-    <video id="player" controls allowFullScreen webkitallowfullscreen mozallowfullscreen></video>
-    <script>
-      const videoElement = document.getElementById('player');
-      const resolutionSelect = document.getElementById('resolution-select');
-      const manifestUri = 'https://anevi-live-channel-cdn.mncnow.id/live/eds/CartoonNetwork/sa_dash_vmx/CartoonNetwork.mpd';
-      const licenseServerUrl = 'https://drmwidevine.nontonbola.my.id/https://mrpw.ptmnc01.verspective.net/?deviceId=MzFhNzdiNGQtZWU5NC0zYTBiLWIzODktNDU5OWRlMzI0NDVh';
+    textarea,
+    input.form-control {
+      background: #F6F6F6;
+      color: #3D3D3D;
+      font-family: monospace;
+    }
+    textarea {
+      resize: none;
+    }
+    label {
+      margin-bottom: 0;
+    }
+    form label {
+      font-size: 10px;
+    }
+    label[for="current-thumbnail"],
+    label[for="thumbnail-options"] {
+      font-size: 10px;
+      height: 3em;
+    }
 
-      shaka.polyfill.installAll();
-      if (shaka.Player.isBrowserSupported()) {
-        initApp();
+    .help {
+      border-bottom: 1px dotted #777;
+      color: #337ab7;
+      cursor: help;
+      font-size: 12px;
+    }
+
+    .warn {
+      border-bottom: 1px dotted #777;
+      color: goldenrod;
+      cursor: help;
+      font-size: 12px;
+    }
+
+    .deprecated {
+      color: silver;
+    }
+
+    .panel:not(.panel-info) {
+      border: none;
+      box-shadow: none;
+    }
+    .container:last-of-type {
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin: 0 0 4px 0;
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+    .left-column div {
+      font-size: 10px;
+    }
+    .left-column .input-group .input-group-addon:first-of-type {
+      min-width: 90px;
+      text-align: right;
+    }
+    .left-column .input-group .input-group-addon:last-of-type {
+      text-align: left;
+    }
+    .numbers-only-input {
+      text-align: right;
+    }
+    .left-column .panel-info * {
+      font-size: 12px;
+    }
+    .left-column .panel-info ul {
+      list-style: square;
+      margin-left: 15px;
+    }
+    .right-column * {
+      font-size: 12px;
+    }
+    .right-column .row:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    .right-column .row:last-of-type {
+      margin-bottom: 0;
+    }
+    #video-info p {
+      margin: 0;
+    }
+    #current-thumbnail a img {
+      background-color: #FEFCB3;
+      border: 1px solid #FFE158;
+      padding: 8px;
+    }
+    .thumbnail-option a img {
+      border: 2px solid transparent;
+      padding: 2px 2px;
+    }
+    .thumbnail-option a:hover img {
+      background-color: transparent;
+      border-color: #3B3B3B;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h1>
+          <img style="height:40px;vertical-align: bottom;" src="//s.ytimg.com/yt/img/logos/youtube_logo_standard_againstwhite-vflKoO81_.png" alt="YouTube Logo" />
+          Custom Video Embed Generator
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- Options Column -->
+      <div class="col-xs-12 col-md-4 pull-left left-column">
+        <form name="youtube-options">
+          <div class="panel">
+            <div class="form-group">
+              <label for="youtube-id"><h4>YouTube Video Id or URL</h4></label>
+              <input type="text" class="form-control input-lg" id="youtube-id" size="11" value="QH2-TGUlwu4" onFocus="select(this);" />
+            </div>
+            <div class="form-group">
+              <h6 class="section-title">Video Title (<span class="help" title="Including a content-specific title aids accessibility tools">?</span>)</h6>
+              <input type="text" class="form-control input-sm" id="video-title" size="4" placeholder="Nyan Cat video" onFocus="select(this);" />
+            </div>
+            <h6 class="section-title">Play Options</h6>
+            <div class="form-group row">
+              <div class="col-xs-6">
+                <!-- TODO: disallow non-numeric character -->
+                <label for="width">Width (pixels)</label>
+                <input type="number" min="0" class="form-control input-sm numbers-only-input" id="video-width" size="4" maxlength="5" value="560" onFocus="select(this);" />
+              </div>
+              <div class="col-xs-6">
+                <label for="height">Height (pixels)</label>
+                <input type="number" min="0" class="form-control input-sm numbers-only-input" id="video-height" size="4" maxlength="5" value="315" onFocus="select(this);" />
+              </div>
+            </div>
+            <hr/>
+            <div class="form-group">
+              <div class="col-xs-12 input-group">
+                <div class="input-group-addon">Start Video at:</div>
+                <input type="number" min="0" class="form-control input-sm numbers-only-input" name="start" size="4" maxlength="5" onFocus="select(this);" />
+                <div class="input-group-addon">seconds</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 input-group">
+                <div class="input-group-addon">End Video at:</div>
+                <input type="number" min="0" class="form-control input-sm numbers-only-input" name="end" size="4" maxlength="5" onFocus="select(this);" />
+                <div class="input-group-addon">seconds</div>
+              </div>
+            </div>
+            <div>
+              <!-- TODO: Make options select -->
+                <input type="checkbox" id="vq" name="vq" value="hd1080" />
+                <label for="vq">Force 1080 HD Resolution</label>
+            </div>
+            <div>
+              <input type="checkbox" id="security" checked />
+              <label for="security">Use Enhanced Security (&nbsp;<span class="help" title="Encrypts the connection between the user and YouTube; required for embeds on most modern websites.">?</span>&nbsp;)</label>
+            </div>
+            <div>
+              <input type="checkbox" id="enhanced-privacy" />
+              <label for="enhanced-privacy">Use Enhanced Privacy (&nbsp;<span class="help" title="Turns off YouTube's tracking until the video plays.">?</span>&nbsp;)</label>
+            </div>
+            <div>
+              <input type="checkbox" id="autoplay" name="autoplay" value="1" />
+              <label for="autoplay">Autoplay Video</label>
+            </div>
+            <div>
+              <input type="checkbox" id="loop" name="loop" value="1" />
+              <label for="loop">Loop the video/playlist (&nbsp;<span class="warn" title="Looping a single video requires that video id to be included with the 'playlist' parameter">!</span>&nbsp;)</label>
+            </div>
+            <br>
+            <h6 class="section-title">Appearence</h6>
+            <div>
+              <input type="checkbox" id="modestbranding" name="modestbranding" value="1" />
+              <label for="modestbranding">Modest Branding (&nbsp;<span class="warn" title="this feature is not compatible with the white progress bar feature">!</span>&nbsp;<span class="help" title="Make the YouTube logo/branding less visible">?</span>&nbsp;)</label>
+            </div>
+            <div>
+              <input type="checkbox" id="rel" name="rel" value="0" />
+              <label for="rel">Do not show unrelated videos on pause/playback (&nbsp;<span class="help" title="Depending on the channel, related videos may not appear, and if they do, they will come from the same channel as the video that was just played. Note: the functionality of this feature changed by YouTube on September 25, 2018">?</span>&nbsp;)</label>
+            </div>
+            <div>
+              <input type="checkbox" id="cc_load_policy" name="cc_load_policy" value="1" />
+              <label for="cc_load_policy">Show closed captions by default</label>
+            </div>
+            <div>
+              <input type="checkbox" id="iv_load_policy" name="iv_load_policy" value="3" />
+              <label for="iv_load_policy">Annotations disabled by default</label>
+            </div>
+            <div style="margin-top: 4px;">
+              <label for="hl">YouTube player language (&nbsp;<span class="help" title="Use a ISO 639-1 locale code to change the language of the YouTube player's interface.">?</span>&nbsp;)</label>
+              <br>
+              <input type="text" id="hl" name="hl" value="" placeholder="en-us" pattern="/^[A-Za-z]{2,4}([_-][A-Za-z]{4})?([_-]([A-Za-z]{2}|[0-9]{3}))?$/" />
+            </div>
+            <br>
+            <h6 class="section-title">Control Options</h6>
+            <div>
+              <input type="checkbox" id="fs" name="fs" value="0" />
+              <label for="fs">Disable fullscreen button</label>
+            </div>
+            <div>
+              <input type="checkbox" id="color" name="color" value="white" />
+              <label for="color">Use white progress bar instead of red (&nbsp;<span class="warn" title="Enabling the white progress bar will prevent modest branding from functioning.">!</span>&nbsp;)</label>
+            </div>
+            <div>
+              <input type="checkbox" id="controls" name="controls" value="0" />
+              <label for="controls">Disable player controls</label>
+            </div>
+            <div>
+              <input type="checkbox" id="disablekb" name="disablekb" value="1" />
+              <label for="disablekb">Disable keyboard control shortcuts</label>
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="playlist">On-the-fly playlist (comma-seperated video IDs) (&nbsp;<span class="help" title="Appears in the embed playlist menu.">?</span>&nbsp;)</label>
+              <input type="text" class="form-control form-control-sm" id="playlist" name="playlist" onFocus="select(this);" />
+            </div>
+            <div class="form-group">
+              <label for="q">Search term playlist (single-word search term) (&nbsp;<span class="help" title="Appears in the embed playlist menu, and overrides the 'on-the-fly' playlist.">?</span>&nbsp;)</label>
+              <input type="text" class="form-control form-control-sm" id="q" name="q" onFocus="select(this);" />
+            </div>
+            <div class="form-group">
+              <label for="custom-params">Custom Parameters</label>
+              <input type="text" class="form-control form-control-sm" id="custom-params" onFocus="select(this);" />
+            </div>
+            <br>
+            <div class="panel panel-info">
+              <div class="panel-heading">Where did the other options go?</div>
+              <div class="panel-body">
+                <p>The following features have been deprecated by YouTube:</p>
+                <div>
+                  <input type="checkbox" id="showinfo" name="showinfo" value="0" disabled />
+                  <label title="This feature was deprecated by YouTube in 2018, and no longer functions" for="showinfo" class="deprecated">Disable dropdown video information box (&nbsp;<span class="help">?</span>&nbsp;)</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="theme" name="theme" value="light" disabled />
+                  <label for="theme" class="deprecated" title="This feature was deprecated by YouTube in 2015, and no longer functions.">Use alternate "Light" UI theme (&nbsp;<span class="help">?</span>&nbsp;)</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="autohide" name="autohide" value="0" disabled />
+                  <label for="autohide" class="deprecated" title="This feature was deprecated by YouTube in 2015, and no longer functions.">Do not autohide play bar (&nbsp;<span class="help">?</span>&nbsp;)</label>
+                </div>
+                <br>
+                <p>Additionally, some features previously available in this tool are now offered as official YouTube features, and so do not require complex workarounds.</p>
+                <ul class="list-unstyled">
+                  <li><a id="video-edit-link" href="https://www.youtube.com/edit?video_id=QH2-TGUlwu4">Custom Preview Image</a><br><span class="text-muted">(look for the "custom thumbnail" button)</span></li>
+                  <li><a href="https://www.youtube.com/branding">Custom Watermark</a></li>
+                  <li><a id="video-endscreen-link" href="https://www.youtube.com/endscreen?v=QH2-TGUlwu4">Call-to-Action</a></li>
+                </ul>
+                <p>If you wish, you can use the legacy version of this tool (no longer maintained) <a href="https://jprusik.github.io/custom-yt-embed/legacy/index.html">here</a>.</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Preview Column -->
+      <div class="col-xs-12 col-md-8 right-column">
+        <div class="col-xs-12">
+          <div class="row">
+            <noscript>
+              <div class="alert alert-danger" role="alert">
+                This tool requires JavaScript to be enabled for your browser.
+              </div>
+            </noscript>
+            <div id="error-container" style="display:none;"></div>
+          </div>
+          <div class="row">
+            <label for="embed-code">Embed</label>
+            <textarea id="embed-code" class="col-sm-12 form-control" rows="9" readonly="readonly" onFocus="select(this);"></textarea>
+          </div>
+          <div class="row">
+            <label for="embed-preview">Preview</label>
+            <div id="embed-preview"></div>
+          </div>
+          <div id="video-info" class="row">
+            <div id="video-metadata" class="col-xs-12 col-sm-6" style="display:none;">
+              <div class="row">
+                <label for="video-author">Author:</label>
+                <div id="video-author"></div>
+              </div>
+              <div class="row">
+                <label for="video-published">Published on:</label>
+                <div id="video-published"></div>
+              </div>
+              <div class="row">
+                <label for="video-views">Views:</label>
+                <div id="video-views"></div>
+              </div>
+              <div class="row">
+                <label for="video-duration">Duration:</label>
+                <div id="video-duration"></div>
+              </div>
+            </div>
+            <div id="video-links" class="col-xs-12 col-sm-6" style="display:none;">
+              <div class="row">
+                <label for="direct-link">Direct Link</label>
+                <br>
+                <a id="direct-link" href="" target="_blank" rel="noopener"></a>
+              </div>
+              <div class="row">
+                <label for="short-link">Short Link</label>
+                <br>
+                <a id="short-link" href="" target="_blank" rel="noopener"></a>
+              </div>
+              <div class="row">
+                <label for="fullscreen-link">Fullscreen Link</label>
+                <br>
+                <a id="fullscreen-link" href="" target="_blank" rel="noopener"></a>
+              </div>
+            </div>
+          </div>
+          <div id="video-thumbnails" class="panel panel-info row" style="display:none;">
+            <div class="panel-heading">
+              <h3 class="panel-title">Click on the images below to open video settings page (must be logged into YouTube)</h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-xs-12 col-sm-3">
+                <label for="current-thumbnail" class="col-xs-12">Current Video Thumbnail:</label>
+                <div id="current-thumbnail" class="col-xs-12"></div>
+                <br>
+                <a id="hd-thumbnail"  class="col-xs-12" href="#" target="_blank" rel="noopener">Click for HD version</a>
+              </div>
+              <div class="col-xs-12 col-sm-9">
+                <label for="thumbnail-options" class="col-xs-12">Video Thumbnail Choices:</label>
+                <div id="first-thumbnail" class="thumbnail-option col-xs-4"></div>
+                <div id="second-thumbnail" class="thumbnail-option col-xs-4"></div>
+                <div id="third-thumbnail" class="thumbnail-option col-xs-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="text-muted">Notice an problem? Have a feature request? Submit it to this project's <a href="https://github.com/jprusik/custom-yt-embed/issues">issue tracker</a>.</p>
+    </div>
+  </footer>
+
+  <script>
+  $(function() {
+    var alertMessage = function(){
+      var show_errors = false;
+      var error_array = Object.keys(errors);
+
+      document.getElementById('error-container').innerHTML = '';
+
+      error_array.forEach(function(error_key){
+        if (window.errors[error_key].active){
+          show_errors = true;
+          document.getElementById('error-container').innerHTML += '<div class="alert alert-danger" role="alert">'+window.errors[error_key].message+'</div>';
+        }
+      });
+
+      if (show_errors){
+        $('#error-container').show();
+      }
+      else{
+        $('#error-container').hide();
+      }
+    };
+
+    var checkVideoDimensions = function(){
+      var video_width = parseInt(document.getElementById('video-width').value,10);
+      var video_height = parseInt(document.getElementById('video-height').value,10);
+
+      if (video_width < 200 || video_height < 200){
+        window.errors.video_embed_too_small.active = true;
+      }
+      else{
+        window.errors.video_embed_too_small.active = false;
+      }
+    };
+
+    var checkVideoId = function(){
+      var video_id = document.getElementById('youtube-id').value;
+
+      window.errors.video_id_invalid.active = false;
+
+      if ([0,11].indexOf(video_id.length) === -1){
+        window.errors.video_id_invalid.active = true;
+      }
+    };
+
+    var displayMetadata = function(data){
+      var video_data = data.items[0];
+      if (video_data){
+        window.errors.video_metadata_fetch_failed.active = false;
+        document.getElementById('video-title').value = video_data.snippet.title;
+        document.getElementById('video-author').innerHTML = video_data.snippet.channelTitle;
+        document.getElementById('video-published').innerHTML = Date(Date.parse(video_data.snippet.publishedAt)).toLocaleString();
+        document.getElementById('video-views').innerHTML = parseInt(video_data.statistics.viewCount).toLocaleString();
+        document.getElementById('video-duration').innerHTML = parseDuration(video_data.contentDetails.duration);
+
+        document.getElementById('hd-thumbnail').href = video_data.snippet.thumbnails.high.url;
+
+        $('#video-metadata').show();
       } else {
-        console.error('Browser tidak didukung!');
+        window.errors.video_metadata_fetch_failed.active = true;
+      }
+    };
+
+    var getVideoMetadata = async function(video_id){
+      var video_lookup_api = `https://www.googleapis.com/youtube/v3/videos/?id=${video_id}&part=snippet%2CcontentDetails%2Cstatistics&key=${YOUTUBE_API_KEY}`;
+
+      return await $.get(video_lookup_api, displayMetadata)
+        .fail((e) => {
+          window.errors.video_metadata_fetch_failed.active = true;
+        })
+        .always(alertMessage);
+    };
+
+    var parseDuration = function(duration){
+      var days = duration.match(/(\d+)\s*D/);
+      var hours = duration.match(/(\d+)\s*H/);
+      var minutes = duration.match(/(\d+)\s*M/);
+      var seconds = duration.match(/(\d+)\s*S/);
+
+      var output_string = [];
+      if (days){ output_string.push(days[1]+' day(s)'); }
+      if (hours){ output_string.push(hours[1]+' hour(s)'); }
+      if (minutes){ output_string.push(minutes[1]+' minute(s)'); }
+      if (seconds){ output_string.push(seconds[1]+' second(s)'); }
+
+      return output_string.join(', ');
+    };
+
+    var parseVideoId = function(input_string){
+      if ([0,11].indexOf(input_string.length) === -1){
+        /* Parse the video id out of a pasted video URL */
+        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+        var match = input_string.match(regExp);
+
+        if (match && match[2].length === 11){
+          document.getElementById('youtube-id').value = match[2];
+        }
       }
 
-      function initApp() {
-        const player = new shaka.Player(videoElement);
-        player.configure({
-          drm: {
-            servers: { 'com.widevine.alpha': licenseServerUrl }
+      checkVideoId();
+    };
+
+    var serializeForm = function(){
+      var optionsForm = document.forms[form_id];
+      var form_selector = $(optionsForm);
+
+      var form_data = form_selector.serializeArray().filter(
+        function(field){
+          return !!field.value;
+        }
+      );
+
+      var loopIsEnabled = !!form_data.find(({name, value}) => name === 'loop' && value === '1');
+      var playlist = form_data.find(({name, value}) => name === 'playlist');
+      var video_id = document.getElementById('youtube-id').value;
+
+      // Looping will not work for a single video unless the video id is also included in the playlist attribute.
+      if (loopIsEnabled && !playlist) {
+
+        form_data = [...form_data, {name: 'playlist', value: video_id}];
+        document.getElementById('playlist').value = video_id;
+      }
+
+      // If the video was added to the playlist for looping, remove it
+      if (!loopIsEnabled && playlist && playlist.value === video_id) {
+        form_data = form_data.filter(({name}) => name !== 'playlist');
+        document.getElementById('playlist').value = '';
+      }
+
+      var query_string = form_data.map(({name, value}) => `${name}=${value}`).join('&');
+
+      return { form_data, query_string };
+    };
+
+
+    var updateEmbedAndPreview = function(){
+      var video_id = document.getElementById('youtube-id').value;
+
+      if (video_id.length > 0){
+        var form_settings = serializeForm();
+        var form_inputs = form_settings.form_data;
+        var query_string_components = [form_settings.query_string, document.getElementById('custom-params').value];
+
+        var embed_query = query_string_components.filter(n => !!n).join('&');
+        embed_query = (embed_query.length > 0 ? '?'+embed_query : '');
+
+        // YouTube now requires the attribute `allowfullscreen` in addition to `fs=1` or the absence of `fs=0`. Otherwise, the fullscreen button will appear, but will be disabled.
+        var allow_fullscreen = embed_query.includes('fs=0') ? '' : ' allowfullscreen';
+
+        var video_title = document.getElementById('video-title').value;
+        var video_height = document.getElementById('video-height').value;
+        var video_width = document.getElementById('video-width').value;
+
+        var embed_protocol = document.getElementById('security').checked ? 'https' : 'http';
+        var embed_domain = document.getElementById('enhanced-privacy').checked ? 'www.youtube-nocookie.com' : 'www.youtube.com';
+        var embed_url = '//'+embed_domain+'/embed/'+video_id+embed_query;
+        var embed_output = `<iframe src="${embed_protocol}:${embed_url}" width="${video_width}" height="${video_height}"${video_title ? ` title="${video_title}"` : ''} frameborder="0"${allow_fullscreen}></iframe>`;
+
+        var preview_output = embed_output;
+
+        document.getElementById('embed-code').value = embed_output;
+        document.getElementById('embed-preview').innerHTML = preview_output;
+      }
+    };
+
+    var updateVideoInfo = function(){
+      var video_id = document.getElementById('youtube-id').value;
+
+      document.getElementById('direct-link').innerHTML = 'https://www.youtube.com/watch?v='+video_id;
+      document.getElementById('direct-link').href = 'https://www.youtube.com/watch?v='+video_id;
+      document.getElementById('short-link').innerHTML = 'https://youtu.be/'+video_id;
+      document.getElementById('short-link').href = 'https://youtu.be/'+video_id;
+      document.getElementById('fullscreen-link').innerHTML = 'https://www.youtube.com/v/'+video_id;
+      document.getElementById('fullscreen-link').href = 'https://www.youtube.com/v/'+video_id;
+      document.getElementById('video-edit-link').href= 'https://www.youtube.com/edit?video_id='+video_id;
+      document.getElementById('video-endscreen-link').href= 'https://www.youtube.com/endscreen?v='+video_id;
+      document.getElementById('video-title').value = 'A YouTube video';
+
+      ['current-thumbnail','first-thumbnail','second-thumbnail','third-thumbnail'].forEach(function(id,index){
+        if (index === 0){
+          index = 'default';
+        }
+
+        document.getElementById(id).innerHTML = '<a href="https://www.youtube.com/edit?video_id='+video_id+'" target="_blank" rel="noopener"><img border="none" src="//img.youtube.com/vi/'+video_id+'/'+index+'.jpg"></a>';
+      });
+
+      $('#video-info, #video-links, #video-thumbnails').show();
+
+      return getVideoMetadata(video_id);
+    };
+
+    var form_id = 'youtube-options';
+    var YOUTUBE_API_KEY = 'AIzaSyAKX2c_yQUOehC3bLDFA5NonWqmtp8cmRU';
+    window.errors = {
+      'video_id_invalid':{
+        'active': false,
+        'message': 'The value you entered does not appear to be a valid video URL.'
+      },
+      'video_embed_too_small':{
+        'active': false,
+        'message': 'Warning: YouTube does not support video embed sizes smaller than 200x200.'
+      },
+      'video_metadata_fetch_failed': {
+        'active': false,
+        'message': 'There was a problem fetching metadata for the specified video.'
+      }
+    };
+
+    // TODO: limit the rate at which the listeners fire
+
+    var last_video_id = document.getElementById('youtube-id').value;
+
+    // If any form values change
+    document.forms[form_id].onchange = function(){
+      // If video ID changed (api requests happen)
+      var current_video_id = document.getElementById('youtube-id').value;
+      if (current_video_id !== last_video_id){
+        parseVideoId(current_video_id);
+        updateVideoInfo();
+
+        last_video_id = current_video_id;
+      }
+
+      updateEmbedAndPreview();
+      checkVideoDimensions();
+      alertMessage();
+    };
+
+    // On page load
+    updateVideoInfo().finally(updateEmbedAndPreview);
+  });
+
+  // Polyfills
+  // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+  if (!Object.keys) {
+    Object.keys = (function() {
+      'use strict';
+      var hasOwnProperty = Object.prototype.hasOwnProperty,
+          hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
+          dontEnums = [
+            'toString',
+            'toLocaleString',
+            'valueOf',
+            'hasOwnProperty',
+            'isPrototypeOf',
+            'propertyIsEnumerable',
+            'constructor'
+          ],
+          dontEnumsLength = dontEnums.length;
+
+      return function(obj) {
+        if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
+          throw new TypeError('Object.keys called on non-object');
+        }
+
+        var result = [], prop, i;
+
+        for (prop in obj) {
+          if (hasOwnProperty.call(obj, prop)) {
+            result.push(prop);
           }
-        });
-        player.addEventListener('variantchanged', onVariantChanged);
-        player.load(manifestUri).then(() => {
-          console.log('Berhasil memuat konten!');
-        }).catch(onError);
-      }
+        }
 
-      function onVariantChanged() {
-        const variants = player.getVariantTracks();
-        resolutionSelect.innerHTML = '';
-        variants.forEach(variant => {
-          const option = document.createElement('option');
-          option.value = variant.id;
-          option.text = variant.height + 'p';
-          if (variant.active === true) {
-            option.selected = true;
+        if (hasDontEnumBug) {
+          for (i = 0; i < dontEnumsLength; i++) {
+            if (hasOwnProperty.call(obj, dontEnums[i])) {
+              result.push(dontEnums[i]);
+            }
           }
-          resolutionSelect.appendChild(option);
-        });
-      }
-
-      resolutionSelect.addEventListener('change', onResolutionChanged);
-
-      function onResolutionChanged() {
-        const variantId = resolutionSelect.value;
-        const variant = player.getVariantTracks().find(track => track.id === variantId);
-        player.selectVariantTrack(variant);
-      }
-
-      function onError(error) {
-        console.error('Error code', error.code, 'dengan pesan', error.message);
-      }
-    </script>
-  </body>
+        }
+        return result;
+      };
+    }());
+  }
+  </script>
+</body>
 </html>
